@@ -43,12 +43,14 @@ public class Main {
     
     public static int kordusteArv(int[] massiiv, int arv) {
         int kordusteArv = 0;
-        for (int i = 0;) {
-            for (int i = 0; 1 < massiiv.length; i++) {
-            if (massiiv[i] == 0) {
+            for (int k = 0; k < massiiv.length; k++) {
+            if (massiiv[k] == arv) {
                 kordusteArv++;
             }
         }
         return kordusteArv;
+    }
+    public static void kolmandaJaViimaseVahetus(String[] massiiv) {
+        if (massiiv.length 
     }
 }
