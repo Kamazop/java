@@ -46,7 +46,7 @@ public class Main {
         for (int i = 0;) {
             for (int i = 0; 1 < massiiv.length; i++) {
             if (massiiv[i] == 0) {
-                
+                kordusteArv++;
             }
         }
         return kordusteArv;
