@@ -7,6 +7,8 @@ public class Main {
         System.out.println("1. " + symbolidKeskel("abba"));
         System.out.println("2. " + sisaldabAlams6ne("abaxaaaxc"));
         System.out.println("3. " + kordusteArv(new int[]{3, 2, 1, 4, 55, 2, 1, 9, 0, 2}, 2));
+        String[] s6ned = {"hp", "asus", "lenovo", "dell", "rog"};
+        kolmandaJaViimaseVahetus(s6ned);
     }
 
     // 1. Olgu meetodi sisendiks suvalise pikkusega sõne (pikkus võib olla ka 0). Kui sõne
@@ -43,14 +45,28 @@ public class Main {
     
     public static int kordusteArv(int[] massiiv, int arv) {
         int kordusteArv = 0;
-            for (int k = 0; k < massiiv.length; k++) {
-            if (massiiv[k] == arv) {
+        for (int k : massiiv) {
+            if (k == arv) {
                 kordusteArv++;
             }
         }
         return kordusteArv;
     }
+    
+    // 4. Olgu meetodi sisendiks sõnede massiiv. Tulemuseks tahame massiivi, mille tagant
+    // kolmas ja viimane element on ära vahetatud – juhul kui massiivis on vähemalt 3
+    // elementi. Kui massiiv on liiga lühike, trükitakse konsoolile vastav teade.
+
     public static void kolmandaJaViimaseVahetus(String[] massiiv) {
-        if (massiiv.length 
+        if (massiiv.length < 3) { // Kontrollib massiivi pikkust
+            System.out.println("Liiga lühike massiiv");
+    } else {
+            String temp = massiiv[massiiv.length - 3]; // Salvestab kolmanda elemendi tempi
+            massiiv[massiiv.length - 3] = massiiv[massiiv.length - 1]; // Vahetab kolmanda elemendi viimasega
+            massiiv[massiiv.length - 1] = temp; // Viimase elemndi vahetab tempi salvestatud kolmanda elemendiga
+            for (String n : massiiv) {
+                System.out.println(n); // Prindib vahetatud elementidega massiivi
+            }
+        }
     }
 }
