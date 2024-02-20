@@ -120,3 +120,14 @@ public class KarlJKodu2-24/Tikumang {
         }
     }
 }
+
+private static int makeHumanMove(int remainingMatches, int M) {
+    int move;
+    do {
+        move = getValidInput("Sisestage tikkude arv, mida soovite võtta (1-" + Math.min(remainingMatches, M) + "): ");
+        if (move > Math.min(remainingMatches, M)) {
+            System.out.println("Sisestatud arv ületab lubatud piiri!");
+        }
+    } while (move > Math.min(remainingMatches, M));
+    return move;
+}
