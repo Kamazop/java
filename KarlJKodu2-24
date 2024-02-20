@@ -35,3 +35,88 @@
 // makeComputerMove() - arvuti teeb oma käigu. Võigukäigu olemasolu korral võidukäik, muul juhul suvaline lubatud käik. Meetod tagastab laual olevate tikkude arvu peale käiku.
 // Kui laual on 10 tikku ja kutsutakse makeComputerMove() ning arvuti teeb näiteks käigu, mis võtab 3 tikku, siis see meetod peab tagastama sellisel juhul 7 (so allesjäänud tikkude arv).
 // makeHumanMove(int) - etteantud numbri puhul tehakse vastava inimese käik.
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Tikumang {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Random random = new Random();
+
+    public static void main(String[] args) {
+        newGame();
+    }
+
+    private static void newGame() {
+        System.out.println("Tere tulemast tikumängu!");
+        int N = getValidInput("Sisestage alguses olevate tikkude arv (N): ");
+        int M = getValidInput("Sisestage maksimaalne tikke, mida võib ühel käigul võtta (M): ");
+        
+        boolean humanTurn = true;
+        int remainingMatches = N;
+
+        while (remainingMatches > 0) {
+            System.out.println("Hetkel on laual " + remainingMatches + " tikku.");
+            if (humanTurn) {
+                int humanMove = getHumanMove(remainingMatches, M);
+                remainingMatches -= humanMove;
+                System.out.println("Inimene võttis " + humanMove + " tikku.");
+            } else {
+                int computerMove = makeComputerMove(remainingMatches, M);
+                remainingMatches -= computerMove;
+                System.out.println("Arvuti võttis " + computerMove + " tikku.");
+            }
+            humanTurn = !humanTurn;
+        }
+
+        if (humanTurn) {
+            System.out.println("Arvuti võitis!");
+        } else {
+            System.out.println("Inimene võitis!");
+        }
+
+        System.out.println("Kas soovite veel mängida? (jah/ei)");
+        String choice = scanner.next();
+        if (choice.equalsIgnoreCase("jah")) {
+            newGame();
+        } else {
+            System.out.println("Kena päeva!");
+        }
+    }
+
+    private static int getValidInput(String prompt) {
+        int input;
+        do {
+            System.out.print(prompt);
+            while (!scanner.hasNextInt()) {
+                System.out.println("Palun sisestage täisarv!");
+                scanner.next();
+            }
+            input = scanner.nextInt();
+            if (input <= 0) {
+                System.out.println("Arv peab olema positiivne!");
+            }
+        } while (input <= 0);
+        return input;
+    }
+
+    private static int getHumanMove(int remainingMatches, int M) {
+        int move;
+        do {
+            move = getValidInput("Sisestage tikkude arv, mida soovite võtta (1-" + Math.min(remainingMatches, M) + "): ");
+            if (move > Math.min(remainingMatches, M)) {
+                System.out.println("Sisestatud arv ületab lubatud piiri!");
+            }
+        } while (move > Math.min(remainingMatches, M));
+        return move;
+    }
+
+    private static int makeComputerMove(int remainingMatches, int M) {
+        int possibleMoves = Math.min(remainingMatches, M);
+        if (remainingMatches % (M + 1) != 0) {
+            return remainingMatches % (M + 1);
+        } else {
+            return random.nextInt(possibleMoves - 1) + 1;
+        }
+    }
+}
