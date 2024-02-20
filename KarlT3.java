@@ -68,47 +68,50 @@ public class ZoppT3 {
             int t = 0;
             boolean validInput = false;
 
+            System.out.println("Sisesta täisarv vahemikus 1-5.");
+            t = skanner.nextInt();
+
         do {
             try {
                 System.out.println("Sisesta täisarv vahemikus 1-5");
-                n = scanner.nextInt();
-                
-                if (n < 1 || n > 5) {
+                t = skanner.nextInt();
+
+                if (t < 1 || t > 5) {
                     throw new IllegalArgumentException("Arv peab olema vahemikus 1-5!");
                 }
-                
+
                 validInput = true;
             } catch (InputMismatchException e) {
-                System.out.println("Vale tüüp! Palun sisesta täisarv.");
-                scanner.next(); // puhastab puhvri
+                System.out.println("Vale tüüpi arv! Palun sisesta täisarv.");
+                skanner.next();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         } while (!validInput);
 
-        int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
+        int[] array = new int[t];
+        for (int i = 0; i < t; i++) {
             validInput = false;
             do {
                 try {
                     System.out.println("Sisesta täisarv massiivi jaoks: ");
-                    array[i] = scanner.nextInt();
+                    array[i] = skanner.nextInt();
                     validInput = true;
                 } catch (InputMismatchException e) {
-                    System.out.println("Vale tüüp! Palun sisesta täisarv.");
-                    scanner.next(); // puhastab puhvri
+                    System.out.println("Vale tüüpi arv! Palun sisesta täisarv.");
+                    skanner.next(); // puhastab puhvri
                 }
             } while (!validInput);
         }
 
         System.out.println("Massiivis olevad arvud:");
-        for (int num : array) {
-            System.out.print(num + " ");
+        for (int arv : array) {
+            System.out.print(arv + " ");
         }
 
         int sum = 0;
-        for (int num : array) {
-            sum += num;
+        for (int arv : array) {
+            sum += arv;
         }
         System.out.println("\nArvude summa: " + sum);
     }
