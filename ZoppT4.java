@@ -1,5 +1,74 @@
 import java.io.*;
 
+//  Teha failid nimedega in1.txt (kus on vähemalt 5 rida teksti) ja in2.txt
+//  (kus on maksimaalselt 3 rida teksti).
+//  Teie programmi ülesanne on proovida välja trükkida mõlema faili 4. rida,
+//  ja kui seda pole, anda veateade “Nii palju ridu pole!".
+public class zoppT4 {
+
+    public static void main(String[] args) throws IOException {
+        loeNeljasRida("src/in1");
+        loeNeljasRida("src/in2");
+        koguFailJaTaisarvud("src/in3", "src/out");
+        valjundFailiSisu("src/out");
+    }
+    public static void loeNeljasRida(String failiNimi) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(failiNimi))) { // Vaja lugeda reakaupa siis kasutasin BufferedReaderit
+            String rida;
+            int count = 0;
+            while ((rida = reader.readLine()) != null) { // Loendab ridu 0-st kuni jõuab 4. readni
+                count++;
+                if (count == 4) { // Kui jõuab 4. reani siis tagastab konsooli stringi
+                    System.out.println("Neljas rida failis " + failiNimi + ": " + rida);
+                    return;
+                }
+            }
+            System.out.println("Nii palju ridu pole!");
+        } catch (IOException e) {
+            System.err.println("Faili lugemisel tekkis viga: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    //  Teha fail nimega in3.txt. Programmi ülesanne on
+    //- välja trükkida kogu faili sisu,
+    //- leida sellest kõik täisarvud ning kirjutada need faili nimega out.txt,
+    //- out.txt välja trükkida.
+    public static void koguFailJaTaisarvud(String sisendFail, String valjundFail) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(sisendFail));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(valjundFail));
+        String rida;
+        while ((rida = reader.readLine()) != null) {
+            String[] words = rida.split("\\s+");
+            for (String word : words) {
+                try {
+                    int number = Integer.parseInt(word);
+                    writer.write(Integer.toString(number));
+                    writer.newLine();
+                } catch (NumberFormatException e) {
+                    // Ignore non-integer values
+                }
+            }
+        }
+        reader.close();
+        writer.close();
+    }
+
+    public static void valjundFailiSisu(String valjundFailiNimi) throws IOException { // Selle meetodiga prindin konsooli out.txt faili sisus olevad täisarvud
+        BufferedReader reader = new BufferedReader(new FileReader(valjundFailiNimi));
+        String rida;
+        System.out.println("Faili " + valjundFailiNimi + " sisu:");
+        while ((rida = reader.readLine()) != null) {
+            System.out.println(rida);
+        }
+        reader.close();
+    }
+}
+
+
+
+import java.io.*;
+
 public class FileHandlingExample {
 
     public static void main(String[] args) {
