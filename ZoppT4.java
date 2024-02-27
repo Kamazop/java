@@ -15,10 +15,10 @@ public class zoppT4 {
     public static void loeNeljasRida(String failiNimi) { // Meetod loeb failist rida-realt ja konsooli annab vaid 4. read
         try (BufferedReader reader = new BufferedReader(new FileReader(failiNimi))) { // Vaja lugeda reakaupa siis kasutasin BufferedReaderit
             String rida;
-            int count = 0;
-            while ((rida = reader.readLine()) != null) { // Loendab ridu 0-st kuni jõuab 4. readni
-                count++;
-                if (count == 4) { // Kui jõuab 4. reani siis tagastab konsooli stringi
+            int loenda = 0; // Annan loendamise alguseks väärtuse 0
+            while ((rida = reader.readLine()) != null) { // Loendab ridu 0-st kuni jõuab 4. reani
+                loenda++;
+                if (loenda == 4) { // Kui jõuab 4. reani siis tagastab konsooli väljundi
                     System.out.println("Neljas rida failis " + failiNimi + ": " + rida);
                     return;
                 }
