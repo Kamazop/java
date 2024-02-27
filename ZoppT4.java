@@ -62,3 +62,36 @@ public class FileHandlingExample {
         }
     }
 }
+
+
+public static void readIntegersAndWriteToFile(String inputFileName, String outputFileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(inputFileName));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] words = line.split("\\s+");
+            for (String word : words) {
+                try {
+                    int number = Integer.parseInt(word);
+                    writer.write(Integer.toString(number));
+                    writer.newLine();
+                } catch (NumberFormatException e) {
+                    // Ignore non-integer values
+                }
+            }
+        }
+        reader.close();
+        writer.close();
+    }
+
+    // Meetod faili sisu väljatrükiks
+    public static void printFileContent(String fileName) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
+        String line;
+        System.out.println("Faili " + fileName + " sisu:");
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
+}
