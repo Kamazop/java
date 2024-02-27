@@ -164,3 +164,87 @@ public static void readIntegersAndWriteToFile(String inputFileName, String outpu
         reader.close();
     }
 }
+
+import java.io.*;
+
+//  Teha failid nimedega in1.txt (kus on vähemalt 5 rida teksti) ja in2.txt
+//  (kus on maksimaalselt 3 rida teksti).
+//  Teie programmi ülesanne on proovida välja trükkida mõlema faili 4. rida,
+//  ja kui seda pole, anda veateade “Nii palju ridu pole!".
+public class zoppT4 {
+
+    public static void main(String[] args) throws IOException {
+        // Käivitame meetodi loeNeljasRida mõlema faili jaoks
+        loeNeljasRida("src/in1");
+        loeNeljasRida("src/in2");
+        // Käivitame meetodi koguFailJaTaisarvud sisendfaili ja väljundfaili nimedega
+        koguFailJaTaisarvud("src/in3", "src/out");
+        // Käivitame meetodi valjundFailiSisu väljundfaili sisu trükkimiseks konsooli
+        valjundFailiSisu("src/out");
+    }
+
+    // Meetod loeb failist rida-realt ja trükib välja 4. rea.
+    public static void loeNeljasRida(String failiNimi) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(failiNimi))) {
+            String rida;
+            int count = 0;
+            // Loeme faili rida-realt
+            while ((rida = reader.readLine()) != null) {
+                count++;
+                // Kui oleme jõudnud neljandani, prindime selle välja
+                if (count == 4) {
+                    System.out.println("Neljas rida failis " + failiNimi + ": " + rida);
+                    return;
+                }
+            }
+            // Kui neljandat rida ei leitud, prindime vastava veateate
+            System.out.println("Nii palju ridu pole!");
+        } catch (IOException e) {
+            // Kui tekib viga faili lugemisel, prindime veateate koos veateatega
+            System.err.println("Faili lugemisel tekkis viga: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    // Meetod loeb failist kõik täisarvud ning kirjutab need teise faili.
+    public static void koguFailJaTaisarvud(String sisendFail, String valjundFail) throws IOException {
+        // Avame sisendfaili lugemiseks ja väljundfaili kirjutamiseks vajalikud vooged
+        BufferedReader reader = new BufferedReader(new FileReader(sisendFail));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(valjundFail));
+        String rida;
+        // Loeme sisendfailist ridu, et leida täisarvud
+        while ((rida = reader.readLine()) != null) {
+            // Jaga rida sõnadeks tühikute järgi
+            String[] words = rida.split("\\s+");
+            // Käime läbi kõik sõnad
+            for (String word : words) {
+                try {
+                    // Proovime teisendada sõna täisarvuks
+                    int number = Integer.parseInt(word);
+                    // Kirjutame täisarvu väljundfaili ja lisame uue rea
+                    writer.write(Integer.toString(number));
+                    writer.newLine();
+                } catch (NumberFormatException e) {
+                    // Ignoreerime mittetäisarvulisi väärtusi
+                }
+            }
+        }
+        // Sulgeme faili lugemise ja kirjutamise vooged
+        reader.close();
+        writer.close();
+    }
+
+    // Meetod trükib välja teise faili sisu.
+    public static void valjundFailiSisu(String valjundFailiNimi) throws IOException {
+        // Avame väljundfaili lugemiseks
+        BufferedReader reader = new BufferedReader(new FileReader(valjundFailiNimi));
+        String rida;
+        // Trükime väljundfaili sisu konsooli
+        System.out.println("Faili " + valjundFailiNimi + " sisu:");
+        while ((rida = reader.readLine()) != null) {
+            System.out.println(rida);
+        }
+        // Sulgeme faili lugemise vooga
+        reader.close();
+    }
+}
