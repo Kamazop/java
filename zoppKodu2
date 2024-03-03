@@ -1,6 +1,3 @@
-// Koduülesanne 2 (kokku kuni 20 punkti)
-// Tikumäng on kahe mängija (kellest üks on arvuti ja teine inimene) mäng, kus mängijad võtavad kordamööda laualt tikke. Kes võtab viimase tiku, on võitnud.
-
 import java.util.Scanner;
 import java.util.Random;
 
@@ -18,20 +15,18 @@ public class zoppKodu2 {
     // See tähendab, et mängija peab võtma vähemalt 1 tiku, aga mitte rohkem kui M tikku.
     // Kordamööda käies mängitakse seni, kuni laual pole ühtegi tikku.
     // Mängija, kes viimase(d) tiku(d) võttis, on võitja.
-
     private static void uusMang() {
         System.out.println("Tere tulemast tikumängu!");
-        int N = sobivSisend("Sisestage tikkude arv, millega mängu alustada (N): ");
-        int M = sobivSisend("Sisestage tikkude arv, mida võib maksimaalselt ühel käigul võtta (M): ");
-
-        boolean inimeseKord = true;
+        int N = sobivSisend("Sisestage tikkude arv millega mängu alustada (N): ");
+        int M = sobivSisend("Sisestage tikkude arv mida võib maksimaalselt ühel käigul võtta (M): ");
+        boolean inimeseKord = true; // Kui true alustab inimene, kui false alustab arvuti
         int allesTikud = N;
 
-        while (allesTikud > 0) {
-            System.out.println("Hetkel on laual " + allesTikud + " tikku.");
+        while (allesTikud > 0) { // Kui tikke laual on rohkem kui 0 jätkatakse mängu
+            System.out.println("Hetkel on laual " + allesTikud + " tikku."); // Kuvatakse mängu seis
             if (inimeseKord) {
                 int inimeseKaik = teeInimeseKaik(allesTikud, M);
-                allesTikud -= inimeseKaik;
+                allesTikud -= inimeseKaik; // vähendab allestikkude arvu inimese poolt käidud tikkude arvu võrra
                 System.out.println("Inimene võttis " + inimeseKaik + " tikku.");
             } else {
                 int arvutiKaik = teeArvutiKaik(allesTikud, M);
@@ -51,7 +46,6 @@ public class zoppKodu2 {
         // Mängu lõppedes küsitakse kasutajalt, kas ta soovib veel mängida.
         // Kui soovib, siis alustatakse uut mängu.
         // M ja N ühe mängukorra jooksul ei muudeta.
-
         System.out.println("Kas soovite veel mängida? (jah/ei)");
         String valik = skanner.next();
         if (valik.equalsIgnoreCase("jah")) { // Kui jah siis jooksutatakse mäng uuesti
@@ -64,7 +58,6 @@ public class zoppKodu2 {
     // Lisapunktid (5p):
     // Iga mängukorra alguses küsitakse kasutajalt arvude N ja M väärtust, seejuures kontrollides, kas tegemist on sobivate täisarvudega.
     // Küsimist korratakse seni, kuni saadakse tingimustele sobivad arvud.
-
     private static int sobivSisend(String prompt) { // Meetod, mis kontrollib sisesndi sobivust
         int input;
         do {
@@ -74,30 +67,30 @@ public class zoppKodu2 {
                 skanner.next();
             }
             input = skanner.nextInt();
-            if (input <= 0) {
+            if (input <= 0) { // arv peab olema pos. ja suurem kui 0
                 System.out.println("Arv peab olema positiivne!");
             }
         } while (input <= 0);
         return input;
     }
 
-    private static int teeInimeseKaik(int allesTikud, int M) {
+    private static int teeInimeseKaik(int allesTikud, int M) { // meetod, mis kontrollib mängija sisendit
         int move;
         do {
             move = sobivSisend("Sisestage tikkude arv, mida soovite võtta (1-" + Math.min(allesTikud, M) + "): ");
-            if (move > Math.min(allesTikud, M)) {
+            if (move > Math.min(allesTikud, M)) { // kontrollib kas ületab lubatud piire, kasutades võrdlust tingimuslausega Math.min
                 System.out.println("Sisestatud arv ületab lubatud piiri!");
             }
         } while (move > Math.min(allesTikud, M));
         return move;
     }
 
-    private static int teeArvutiKaik(int allesTikud, int M) {
+    private static int teeArvutiKaik(int allesTikud, int M) { // Meetod, mille alusel arvuti oma käigud teeb
         int voimalikudKaigud = Math.min(allesTikud, M);
-        if (allesTikud % (M + 1) != 0) {
-            return allesTikud % (M + 1);
+        if (allesTikud % (M + 1) != 0) { // Kontrollib kas jagamisel tekib jääk
+            return allesTikud % (M + 1); // Kui tekib siis jääk on arvuti käigu suurus
         } else {
-            return juhuslik.nextInt(voimalikudKaigud - 1) + 1;
+            return juhuslik.nextInt(voimalikudKaigud - 1) + 1; // juhuslik arv 0-st n-ni koos veaparandusega
         }
     }
 }
