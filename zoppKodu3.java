@@ -56,7 +56,7 @@ public class zoppKodu3 {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] andmed = line.split("\\|");
-                if ((andmed.length == 4) && onSobiv(andmed[1]) && onSobiv(andmed[2]) && onSobivId(andmed[0])) { // Kontrollib, kas rida sisaldab õiget arvu osi
+                if ((andmed.length == 4) && onSobiv(andmed[1]) && onSobiv(andmed[2]) && onSobivPalk(andmed[3]) && onSobivId(andmed[0])) { // Kontrollib, kas rida sisaldab õiget arvu osi
                     bw1.write("Perekonnanimi: " + andmed[1] + "\n");
                     bw1.write("Eesnimi: " + andmed[2] + "\n");
                     bw1.write("Isikukood: " + andmed[0] + "\n");
@@ -94,8 +94,12 @@ public class zoppKodu3 {
         }
     }
 
-    private static boolean onSobiv(String nimi) { // Meetod kontrollib, kas nimi ei sisalda numbreid
+    private static boolean onSobiv(String nimi) { // Meetod kontrollib, kas nimi ja perekonna nimi ei sisalda numbreid
         return !nimi.matches(".*\\d.*");
+    }
+
+    private static boolean onSobivPalk(String palk) { // Meetod kontrollib, kas palk sisaldab vaid numbreid
+        return palk.matches(".*\\d.*");
     }
 
     private static boolean onSobivId(String id) { // Meetod kontrollib, kas isikukood on õige pikkusega ja koosneb ainult numbritest
