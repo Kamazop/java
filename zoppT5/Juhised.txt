@@ -1,0 +1,24 @@
+Tunniülesanne 5.
+
+1. Kirjutada meetod, mis saab sisendiks täisarvude dünaamilise massiivi ja moodustab
+selle põhjal kaks hulka.
+static void massiivHulkadeks(ArrayList<Integer> list)
+
+Esimesse pannakse massiivi elemendid, mis on väiksemad kui 100, teise aga
+elemendid, mis on suuremad kui 100. Esimese hulga elemendid on järjestatud
+kasvavalt ja teise hulga elemendid on samas järjestuses, nagu nad olid esialgses
+masssiivis.
+Nii esialgne list kui tulemushulgad trükitakse konsoolile.
+Nt kui esialgne list on (5,202,345,66,3,5,78,3,341,51,2,3444,499), siis tulemuseks on
+kaks hulka,
+väiksemad = (2, 3, 5, 51, 66, 78,)
+suuremad = (202, 345, 341, 3444, 499)
+
+2. Kirjutada meetod, mis saab sisendiks sõnede dünaamilise massiivi ja tagastab Maptüüpi
+andmekogumi, kus võtmeteks on erinevad sõnede algustähed ja väärtusteks selle
+tähega algavate sõnede arv massiivis.
+static Map<Character,Integer> algustäheKordsused(ArrayList<String> list)
+
+Nt kui sisendjada on ("üks", "kaks", "kolm", "kaks", "neli", "üks", "viis", "kaks",
+"kolm", "neli", "viis", "üks", "üks", "kaks") siis tulemus on {v=2, k=6, ü=4, n=2}.
+Nii sisendjada kui tulemus trükitakse konsoolile.
