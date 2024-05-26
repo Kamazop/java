@@ -1,3 +1,5 @@
+package zoppKodu3;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +18,8 @@ public class zoppKodu3 {
         System.out.println("Eemaldatud tekst: " + asendaPunktiga);
 
         // Teise ül meetodite välja kutsumiseks
-        convert("inimesed.txt", "valjund1.txt", "valjund2.txt");
-        eemaldaRida("inimesed.txt", "81234442345|Kask|Joosep|300"); // Näiteks eemaldame selle rea
+        convert("src/zoppKodu3/inimesed.txt", "src/zoppKodu3/valjund1.txt", "src/zoppKodu3/valjund2.txt");
+        eemaldaRida("src/zoppKodu3/inimesed.txt", "81234442345|Kask|Joosep|300"); // Näiteks eemaldame selle rea
     }
     static char leiaKõigeSagedasemNumber(String tekst) {
         if (!tekst.matches(".*\\d+.*")) {
