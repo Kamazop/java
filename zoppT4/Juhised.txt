@@ -1,0 +1,12 @@
+Tunniülesanne 4.
+
+1. Teha failid nimedega in1.txt (kus on vähemalt 5 rida teksti) ja in2.txt
+(kus on maksimaalselt 3 rida teksti). Tekstifaili saab luua, paremklõpsates
+src-kaustal ja valides New ->Fail ->anda nimi ->Text
+Teie programmi ülesanne on proovida välja tükkida mõlema faili 4. rida,
+ja kui seda pole, anda veateade “Nii palju ridu pole!".
+
+2. Teha fail nimega in3.txt. Programmi ülesanne on
+- välja trükkida kogu faili sisu,
+- leida sellest kõik täisarvud ning kirjutada need faili nimega out.txt,
+- out.txt välja trükkida.
