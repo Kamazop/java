@@ -1,0 +1,24 @@
+- 4x4 Trips-Traps-Trull +
+- Kasutaja vs arvuti +
+- Mängulaud 4x4, ruututele klikkimisega +
+- Arvuti tähis 0 ja Kasutaja tähis X +
+- Kasutaja alustab mängu +
+- Käigud vaheldumisi +
+- Peale igat käiku kuvatakse mängulaua seis +
+- Valesisestused - Ei reageeri valeklikkidele (kui ruudus on juba tähis) +
+- Programm tuvastab, kui legaalseid käike rohkem pole +
+    - KUI MÄNGULAUAL KÕIK VÄLJAD ON TÄIS
+        - Kuvab teate, et seisuks on viik +
+            - Alustab uue mängu +
+            - Küsib selleks nõusolekut +
+    - KUI MÄNGIJA ON VÕITNUD
+        - Kuvab teate, et mängija on võitnud +
+            - Alustab uue mängu +
+            - Küsib selleks nõusolekut +
+    - KUI ARVUTI ON VÕITNUD
+        - Kuvab teate, et arvuti on võitnud +
+            - Alustab uue mängu +
+            - Küsib selleks nõusolekut +
+- Arvuti kasutab taktikalist käimist +
+    - Võidu võimalusel saavutab võidu +
+    - Takistab mängija võidu võimalust (peaaegu suudab takistada)
