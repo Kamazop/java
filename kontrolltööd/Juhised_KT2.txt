@@ -1,0 +1,46 @@
+Kontrolltöö 2 teemad.
+
+Teooriaosa (mahus 20 punkti):
+tuleb teada teemasid, mida on käsitletud loengutes 7 ja 8:
+- Objektid ja klassid
+- Dünaamilised ja staatilised meetodid ning muutujad
+- Abstraktsed klassid
+- Ülelaadimine ja ülekirjutamine
+- Objektide kogumid
+- Töö voogudega
+
+Praktiline osa koosneb kolmest ülesandest (kokku 30 punkti). Kinni tuleb pidada meetodite
+spetsifikatsioonidest, st milline on sisend ja milline on väljund. Ülesanded on raskusastmelt
+umbes sellised.
+
+1. Luua klass Ristkülik, millel on kaks välja külgede pikkuste jaoks ja mille konstruktoril on
+kaks parameetrit (külgede pikkuste jaoks). Klassil on järgmised meetodid:
+public void sisestaKüljed() – küsib kasutajalt ristküliku mõõdud.
+public double arvutaPindala() – tagastab ristküliku pindala.
+Kirjutada programm, mis laseb kasutajal arvutada tema antud mõõtudega ristküliku pindala
+ja trükib tulemuse konsoolile.
+
+2. Luua klass Ristkülik ja selle alamklass Ruut. Klassil Ristkülik on kaks samanimelist meetodit
+trükiPindala, millest üks võimaldab trükkida välja ristküliku pindala (kahe parameetriga) ja
+teine ruudu pindala (ühe parameetriga). Klasside konstruktorid on ilma parameetriteta.
+Kirjutada programm, mis loob ühe ristküliku ja ühe ruudu ning trükib välja nende pindalad.
+
+3. Luua klass Juurvili, millel on kaks andmevälja, nimi(tüüpi String) ja kogus(tüüpi int).
+Kirjutada programm, mis
+- loob andmekogumi nimekiri, kus saab hoida objekte tüüpi Juurvili.
+- paneb nimekirja kolm juurvilja koos kogustega.
+
+Programmis on lisaks kaks meetodit:
+- public <nimekirja tüüp> lisa(Juurvili, <nimekirja tüüp>) – kui selline juurvili on olemas,
+  siis vastava juurvilja kogust suurendatakse. Kui sellist pole, lisatakse see nimekirja.
+- public <nimekirja tüüp> eemalda(Juurvili, <nimekirja tüüp>) – kui selline juurvili on
+  olemas, siis vastava juurvilja kogust vähendatakse. Kui kogus pole enam positiivne
+  arv, siis juurvili eemaldatakse. Kui sellist juurvilja pole, siis ei tehta midagi.
+
+4. Luua klass Juurvili, millel on kaks andmevälja, nimi(tüüpi String) ja kogus(tüüpi int).
+Kirjutada programm, mis
+- loob andmekogumi nimekiri, kus saab hoida objekte tüüpi Juurvili.
+- paneb nimekirja kolm juurvilja koos kogustega.
+- Trükib välja kõige lühema nimega juurvilja koguse, kasutades selleks meetodit:
+  public Juurvili kogus(<nimekirja tüüp>), mis kasutab voogusid (stream) ja leiab kõige
+  lühema nimega juurvilja koguse nimekirjas. 
