@@ -1,0 +1,21 @@
+Tunniülesanne 1
+
+Tänastes ülesannetes tulemuse väljastamine tähendab selle väljatrükkimist
+konsoolile käsuga System.out.println().
+Üleslaaditavas java-failis peab kajastuma teie nimi ja töö number: nt zopp1.java
+Üles tuleb laadida ainult oma Java-fail, mitte kogu projekt.
+
+1. On antud kolm erinevat täisarvu (muutujat). Väljastada neist kaks väiksemat. Nt
+kui arvud on 8, 2 ja 16, siis väljastatakse 8 ja 2.
+
+2. On antud kaks täisarvu (muutujat). Väljastada tõeväärtus “true”, kui vähemalt üks
+jagub kolmega, ja muidu “false”.
+Nt. 13 ja 32 ==> vastuseks “false”
+25 ja 135 ==> vastuseks “true”
+
+3. On antud kolm täisarvu x, y ja z. Arvutage 5 korda või senikaua, kuni y ei ületa arvu
+50000, muutujatele x ja y uus väärtus eeskirja järgi:
+x = x * 2 + y
+y = x + y + z (esmalt x ja seejärel y).
+Tulemuseks väljastatakse saadud arv ja teade, kas töö peatus 5 korra järel või arvu
+50000 ületamise järel.
