@@ -1,0 +1,27 @@
+Kodused ülesanded 1. (Kokku 20 punkti)
+
+Töö olgu korrektselt vormistatud ja kommenteeritud. Faili nimes peab kajastuma teie
+nimi ja töö number: nt zingelKodu1.java
+Iga ülesande lahendus olgu kirjas omaette meetodis, mida saab main-meetodist välja
+kutsuda. Main-meetodis on deklareeritud muutujad, mis antakse igale meetodile
+argumendiks ette. Tulemused trükitakse konsoolile.
+1. Olgu meetodi sisendiks suvalise pikkusega sõne (pikkus võib olla ka 0). Kui sõne
+pikkus on paarisarvuline, tahame vastuseks selle sõne 2 keskmist sümbolit. Kui sõne
+pikkus on paarituarvuline, tahame vastuseks saada sõne 3 keskmist sümbolit. Kui
+sõne on liiga lühike, tuleb tagastada kogu sõne (ehk siis juhtudel, kui sõne pikkus on 0
+või 1).
+2. Olgu meetodi sisendiks suvalise pikkusega sõne (pikkus võib olla ka 0). Tahame
+saada vastuseks tõeväärtuse “true”, kui 2. või 4. positsioonil asub alamsõne “aaa”, ja
+“false” muidu.
+Näiteks:
+ “aaaaaxxcb" --> true
+ “abaxaaaxc” --> true
+ "xxabc" --> false
+ “aaabxba” --> false
+3. Olgu meetodi sisendiks täisarvude massiiv ja üks täisarv. Vastuseks tahame teada,
+kui mitu korda etteantud arv selles massiivis esineb.
+Nt [3,2,1,4,55,2,1,9,0,2] ja 2 --> 3
+ [3,1,4,55,1,9,0] ja 2 --> 0
+4. Olgu meetodi sisendiks sõnede massiiv. Tulemuseks tahame massiivi, mille tagant
+kolmas ja viimane element on ära vahetatud – juhul kui massiivis on vähemalt 3
+elementi. Kui massiiv on liiga lühike, trükitakse konsoolile vastav teade. 
