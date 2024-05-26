@@ -1,0 +1,59 @@
+Kodused ülesanded 3
+(kokku 20 punkti)
+
+1. (8p) Ülesanne on eemaldada sisendiks olevast tekstist (sõnest) kõige sagedamini
+esineva numbri (0-9) kõik esinemised. Kui sarnase sagedusega numbreid on mitu,
+eemaldada suurim sellise sagedusega number. Kui tekstis polegi numbreid, väljastada
+veateade: „Tekstis pole numbreid.“ Kõik sümbolid sõnes, mis pole ei inglise tähestiku
+tähed ega numbrid, asendada punktidega.
+
+Lahenduses peaks sisalduma kaks meetodit,
+static char leiaKõigeSagedasemNumber(String tekst)
+static String eemaldaKõigeSagedasemNumber (String tekst,char symbol)
+
+Nt.
+leiaKõigeSagedasemNumber(“ The years were 1777,1799,1997,1998 and 2007!!!!”)
+-> 9
+eemaldaKõigeSagedasemNumber(“The years were 1777,1799,1997,1998 and
+2007!!!!”,9) -> “The years were 1777.17.17.18 and 2007….”
+leiaKõigeSagedasemNumber(“ The years were 1777,1979,1997,1988 and 2007!!!!”)
+-> 7
+eemaldaKõigeSagedasemNumber(“ The years were 1777,1979,1997,1988 and
+2007!!!!”,7) -> “ The years were 1.199.199.1988 and 200….”
+leiaKõigeSagedasemNumber (“trrkrt kpsstVVrqqKKt !!!!!!!!!!!!”) // -> veateade
+
+2. (12p) Firmal on töötajate kohta info tekstifailis, kus andmed on esitatud kujul
+isikukood|perekonnanimi|eesnimi|palk (igal real üks töötaja) - eraldusmärk on |.
+
+Põhiosa (6p):
+Tahame, et info paremaks lugemiseks andmed uuesti trükitaks faili kujul
+Perekonnanimi: …
+Eesnimi: …
+Isikukood: …
+Palk: …
+
+Kahe töötaja kirjete vahele peab jätma tühja rea.
+Sellised read sisendfailist, mis ei ole sobilikul kujul, tuleb kirjutada omaette faili
+muutmata kujul.
+Seega tuleb kirjutada
+- meetod convert, mis võtab ette sisendfaili ja teisendab sobival kujul info
+  reakaupa vajalikule kujule esimesse väljundfaili, ning kirjutab ebasobivad sisendid
+  muutmata kujul teise väljundfaili.
+  static void convert(String sisendfail, String valjund1, String
+  valjund2)
+- iga kord meetodi käivitamisel kirjutatakse väljundfailid üle
+- vaja on kasutada veahaldust (kas sisendfail on olemas jms)
+
+Lisaks(kuni 4p):
+Kontrollitakse sisendi sobivust. Punkte saab vastavalt sellele, kui täpselt sisendit
+kontrollitakse
+- minimaalselt tuleb kontrollida, kas vajalikud neli osa on olemas.
+- saab kontrollida, kas nt nimi ei sisalda numbreid, kas isikukood on õige pikkusega ja
+  koosneb ainult numbritest jms (pattern matching).
+
+Lisaks (2p)
+- Meetod eemaldaRida, mis võtab ette sisendfaili ning sõne . Meetod kontrollib
+  reakaupa, kas mõni sisendfaili rida on võrdne selle sõnega, ja kui on, siis eemaldab
+  selle rea. NB! Kui eemaldatakse faili keskelt, ei tohi asendada seda rida tühja reaga,
+  vaid fail tuleb ümber kirjutada nii, et üks rida on vähem.
+  static void eemaldaRida(String sisendfail, String otsitav)
