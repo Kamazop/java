@@ -1,0 +1,54 @@
+Koduülesanded 5 (kokku 40 punkti)
+
+Ülesanne 1.(10 punkti)
+Realiseerida uus andmetüüp Person, millel on kolm andmevälja: inimese eesnimi,
+perekonnanimi ning sünniaasta.
+Luua andmekonteiner inimesed, mis sisaldab vähemalt 8 objekti tüüpi Person (st
+vähemalt 8 inimest oma ees- ja perekonnanimega ning sünniaastaga). Kõikide
+andmeväljade väärtused võivad korduda (nt kolm sama perekonnanime või kaks sama
+sünniaastat jne). Konteineri valiku jätan vabaks – valige ise.
+Programm palub kasutajal sisestada perekonnanime. On sisendikontroll – see ei tohi
+sisaldada muid sümboleid peale tähtede.
+Kui sellise perekonnanimega isik on olemas, siis väljastatakse tema eesnimi ja
+sünniaasta.
+Kui on mitu isikut sama perekonnanimega, siis väljastatakse nende kõigi eesnimi ja
+sünniaasta.
+Kui sellist perekonnanime ei leidu, siis antakse vastav teade.
+
+Ülesanne 2.(kokku 30 punkti)
+Väiketootja tarnib ümbruskonna rahvale endavalmistatud piimatooteid ja vajab
+arvepidamist.
+
+1. Luua klass (andmetüüp) Piimatoode alamklassidega Juust, Piim ja Kohupiim. Need
+neli klassi moodustavad ühe paketi.
+- Igal piimatootel on andmeväljad nimi ja hind.
+- Uusi tooteid saab lisada konstruktoritega, mille parameetriteks on toote nimi (String)
+  ja toote kilohind või piima liitrihind (need on tüüpi double). Nt
+  Juust eestijuust = new Juust("eesti juust",6.5);
+- Klassil Piimatoode on meetodid getHind ja getNimi, mis tagastavad vastavalt
+  toote hinna ja nime.
+- (5 punkti) Ostes vähemalt 3 kilo juustu või 5 liitrit piima või 2 kilo kohupiima
+  (seejuures võivad ostu sees olla ka näiteks erinevad piimad, aga kokku vähemalt 5
+  liitrit jne), saab ostja vastava tooteliigi soodustust 10%. Seega peaks alamklassidel
+  olema ka oma meetod getPrice(kogus), mis arvestab soodustusi. Siin kogus
+  peaks olema vastava tooteklassi kogus (nt kõikide juustude kogus kokku ühel ostjal).
+
+2. Luua klass (andmetüüp) Arve ja panna see omaette paketti. Arve konstruktor saab
+  parameetrina ette tellija nime (meie väiketootja teab, kus tema kliendid elavad ja
+  seega nimest piisab). Klassil Arve on järgmised meetodid:
+- void lisa(Piimatoode toode, int kogus), mis lisab arvele tellitu.
+- String klient(), mis tagastab tellija nime.
+- double leiaKoguSumma(), mis tagastab tellimuse summa (täpsusega 2
+  komakohta – vaata näiteks java.text.DecimalFormat vms)
+- int leiaArveNr(), mis tagastab arve numbri.
+- Staatiline meetod private static int leiaJargmine(), mis leiab järgmise
+  arve numbri.
+- Meetod maksa(), mis kasutades eelmisi meetodeid, trükib välja tšeki, kus on
+  kirjas arve number, tellija, tellitud kaup koos kogusega, soodustused, koguhind.
+  Plusspunktid, kui väljatrükk on kenasti kujundatud.
+  Lisaks on klassis Arve vaja ka kohta andmete hoidmiseks – kuna seda saab
+  realiseerida mitmel eri viisil, jätan siin teile vabad käed.
+
+3. Viimaks põhiprogramm, mis kasutab kahte loodud paketti. Kõigepealt lisatakse
+  tooted – väiketootja valmistab kolme sorti juustu, kahte sorti piima ja kolme sorti
+  kohupiima. Siis moodustatakse kolme tellija arved ja trükitakse need konsoolile.
