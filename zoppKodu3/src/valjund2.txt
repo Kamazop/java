@@ -1,0 +1,2 @@
+Tamm|Toomas|1234567|1100      //vale
+00000000001|Meri|Piret|errr   //vale
