@@ -1,0 +1,11 @@
+Tunniülesanne 8.
+
+Luua graafiline liides, kus on kaks tulpa. Tulpadel on pealdised, mille kiri
+on roheline ja tüüpi Arial suurusega 30. Tulbad paiknevad pea-aknas
+sümmeetriliselt (kasutada nt setPadding ja setSpacing).
+Tulpade pealdised on ‘Küsimus 1' ja ‘Küsimus 2’. Esimeses tulbas on
+küsimus, millele peaks andma vastuse nelja valiku hulgast, teises tulbas
+on küsimus, millele peaks andma vastuse tekstikastis. Vastuse
+fikseerimiseks on mõlemas tulbas nupp ‘Vasta’ ja vastavalt sellele, kas
+vastus on õige, kuvatakse mõlema tulba alla kas ‘Õige' (siniselt) või
+'Vale' (punaselt). Vastuse kiri on samuti kirjas suurusega 30.
