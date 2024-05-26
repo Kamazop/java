@@ -1,0 +1,34 @@
+Tunniülesanne 6.
+
+Luua pakett Soidukid, milles on andmetüüp (klass) Soiduk, millel on
+kaks alamklassi, Auto ja Paat.
+- Klassil Soiduk on kolm (paketis nähtavat) andmevälja, number
+  (String), maxKiirus (int) ja hind (int). Numbri ja kiiruse jaoks
+  tuleks teha tavalised get- ja set-meetodid, hinna jaoks get, aga
+  hinna määramiseks ilma argumentideta meetod, mis paneb hinnaks
+  nulli.
+- Klassidel Auto ja Paat on kaks konstruktorit. Üks saab
+  argumendiks sõiduki numbri ja teine konstruktor on ilma
+  argumentideta.
+Klassidel Auto ja Paat on mõlemal oma meetod hinna määramiseks.
+- Auto puhul: kui maxKiirus on väiksem kui 50, tuleb hinnaks 400,
+  kui suurem, siis 1000.
+- Paadi puhul: paadil on veel üks oma privaatne väli, syvis
+  (double). Sellele teha oma set ja get meetodid. Kui süvis on
+  väiksem kui 0,5 m, on hinnaks 100. Kui süvis on suurem, siis
+  sõltuvalt maxKiirusest on hind 300 (kiirus väiksem kui 10) või
+  1500 (kiirus suurem).
+
+Programmi põhiosas (mis on eraldi fail väljaspool paketti Soidukid)
+tuleks luua 2 objekti tüüpi Auto (üks neist kohe koos numbriga, teine
+mitte) ja 2 objekti tüüpi Paat (üks neist kohe koos numbriga, teine
+mitte).
+- Määrata kahele, millel pole veel numbrit, number (set-meetodiga).
+- Määrata kõigile set-meetoditega kiirused ja paatidele süvised.
+- Leida kõigi sõidukite hinnad, aga ühele määrata hind ülemklassi
+  Soiduk hinna määramise meetodiga (st ühe hinnaks peab saama 0).
+- Panna need omal valikul mõnda massiivi, listi vms.
+- Väljastada (printida konsoolile), kasutades get-meetodeid, kõigi
+  sõidukite numbrid, kiirused ja hinnad.
+- Võib teha ka nii autodele kui paatidele meetodi show ja kasutada
+  seda väljastamiseks.
