@@ -1,0 +1,21 @@
+Tunniülesanne 7.
+
+1. Muuta paketti Soidukid nii, et klass Soiduk oleks abstraktne klass, milles
+on abstraktsed meetodid sethind() ja show().Lisada paketile veel üks
+alamklass Lennuk, millel on oma väljad maxKorgus ja lennuUlatus.
+Kõigis alamklassides implementeerida meetodid
+- sethind(), mis autode ja paatide jaoks on sama nagu eelmise nädala
+  tunnis. Lennukite hinna arvutamiseks mõelda ise välja algoritm, mis
+  sõltuks väärtustest maxKorgus ja lennuUlatus.
+- show(), mis võimaldab igal alamklassil kõigi tema väljade väärtused
+  konsoolile trükkida.
+Põhiprogrammis luua lisaks seni olemasolevale neljale objektile (kaks autot ja
+kaks paati) kaks objekti tüübist Lennuk, panna kõik kuus objekti ühte
+dünaamilisse massiivi ja trükkida meetodi show() abil andmed konsoolile.
+
+2. Teha voog, mis leiab etteantud sõnede seast lühima sõne. Sõned võivad olla
+ette antud kas loendina või mingi massiivina.
+
+3. Teha voog, mis leiab etteantud täisarvude seast kõikide arvust 100 väiksemate
+arvude viimased numbrid, koondab need mingisse massiivi ja väljastab selle
+konsoolile.
