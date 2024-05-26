@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPane" prefHeight="292.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controller">
+      <AnchorPane prefHeight="276.0" prefWidth="635.0">
+         <children>
+            <TitledPane animated="false" collapsible="false" layoutY="-1.0" prefHeight="293.0" prefWidth="319.0" text="Küsimus 1" textFill="#00b218">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="317.0" styleClass="oige1">
+                     <children>
+                        <Text layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Palju on 1+1?" AnchorPane.bottomAnchor="209.2140625" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="155.54296875" AnchorPane.topAnchor="2.0">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <RadioButton fx:id="valik1" layoutX="26.0" layoutY="62.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="44.0" text="0" AnchorPane.leftAnchor="4.0">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Valik1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="valik2" layoutX="26.0" layoutY="90.0" mnemonicParsing="false" text="1" toggleGroup="$Valik1" AnchorPane.leftAnchor="4.0">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="valik3" layoutX="26.0" layoutY="118.0" mnemonicParsing="false" text="2" toggleGroup="$Valik1" AnchorPane.leftAnchor="4.0">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton fx:id="valik4" layoutX="26.0" layoutY="146.0" mnemonicParsing="false" text="3" toggleGroup="$Valik1" AnchorPane.leftAnchor="4.0">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
+                        </RadioButton>
+                        <Button fx:id="vastus1" accessibleRoleDescription="Vastus1" layoutX="14.0" layoutY="183.0" mnemonicParsing="false" onAction="#vastus1" prefHeight="32.0" prefWidth="102.0" style="-fx-background-radius: 25;" text="Vasta" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="2.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="vastustext1" layoutX="229.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.rightAnchor="2.0">
+                        <font>
+                           <Font name="Arial" size="30.0" />
+                        </font></Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutX="319.0" layoutY="-1.0" prefHeight="293.0" prefWidth="316.0" text="Küsimus 2" textFill="#00b218">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="323.0">
+                     <children>
+                        <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sisesta kursuse nimi" AnchorPane.bottomAnchor="209.2140625" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="156.0859375" AnchorPane.topAnchor="2.0">
+                           <font>
+                              <Font name="Arial" size="24.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="vastus2" layoutX="14.0" layoutY="183.0" mnemonicParsing="false" onAction="#vastus2" prefHeight="32.0" prefWidth="102.0" style="-fx-background-radius: 25;" text="Vasta" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="2.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TextArea fx:id="sisend" layoutX="23.7" layoutY="59.7" prefHeight="116.0" prefWidth="289.0" promptText="Sisesta..." wrapText="true" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="38.0">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </TextArea>
+                     <Text fx:id="vastustext2" layoutX="265.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.rightAnchor="2.0">
+                        <font>
+                           <Font name="Arial" size="30.0" />
+                        </font></Text>
+                     <Text layoutX="26.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(vastus: Objektorienteeritud programmeerimine)" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </TitledPane>
+         </children>
+      </AnchorPane>
+</BorderPane>
